@@ -22,7 +22,6 @@ public class CurrencyExchangeController {
 	@GetMapping("/currency-exchange/from/{from}/to/{to}")
 	public CurrencyExchange retrieveExchangeValue(@PathVariable(value = "from") String from,
 			@PathVariable(value = "to") String to) {
-
 //		CurrencyExchange currencyExchange = new CurrencyExchange(1000L,from,to,BigDecimal.valueOf(50));
 		logger.info("Retrieved exchange value called {} to {}",from,to);
 		CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
